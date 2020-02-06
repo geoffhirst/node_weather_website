@@ -10,15 +10,9 @@ const messageTwo = document.querySelector('#message-2')
         messageTwo.textContent = ''
         const location = search.value
 
-        var url = 'http://localhost:3000/weather?'
+        var url = '/weather?address='
 
-        if (location !== '')
-        {
-            url = url + 'address=' + location
-        }
-
-        fetch(url).then((response) => {
-            
+        fetch(url+ location).then((response) => {
     
             response.json().then((data) =>{
                 if (data.error) {
